@@ -1,0 +1,281 @@
+/* line 5, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 3, ../sass/index.scss */
+body {
+  font-family: "Microsoft Yahei", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.8em;
+  display: flex;
+  justify-content: center;
+}
+
+/* line 10, ../sass/index.scss */
+.container {
+  margin-top: 2.66666667em;
+}
+/* line 13, ../sass/index.scss */
+.container main header {
+  padding: 1em 0;
+  display: flex;
+}
+/* line 17, ../sass/index.scss */
+.container main header .title h1 {
+  color: #6679df;
+  font-weight: bold;
+}
+/* line 24, ../sass/index.scss */
+.container .content {
+  margin-top: 1.33333333em;
+  display: flex;
+}
+/* line 27, ../sass/index.scss */
+.container .content h2 {
+  margin: 1em 0;
+  font-size: 1.33333333em;
+  padding-bottom: .33333333em;
+  border-bottom: 1px solid #000;
+  font-weight: bold;
+}
+/* line 36, ../sass/index.scss */
+.container .content .display-list li div.tent {
+  border-left: 1px solid #000;
+  margin-left: 6.75em;
+  padding: 0  0.5em;
+}
+/* line 42, ../sass/index.scss */
+.container .content .display-list li .li-title .time {
+  display: inline-block;
+  width: 5.8em;
+}
+/* line 46, ../sass/index.scss */
+.container .content .display-list li .li-title .point {
+  display: inline-block;
+  width: 0.6em;
+  height: 0.6em;
+  border-radius: 0.6em;
+  background-color: #000;
+  margin: 0 0.6em;
+}
+/* line 54, ../sass/index.scss */
+.container .content .display-list li .li-title .li-name {
+  color: #3a4fbd;
+}
+/* line 62, ../sass/index.scss */
+.container .content .education ul .edu-blank {
+  height: .75em;
+}
+/* line 71, ../sass/index.scss */
+.container .content .work .work-tent .work-title .symbol {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  border-radius: 1em;
+  border: 1px solid #000;
+  position: relative;
+  top: 0.1em;
+  margin-right: 0.5em;
+}
+/* line 80, ../sass/index.scss */
+.container .content .work .work-tent .work-title .symbol .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -.25em;
+  margin-left: -.2em;
+  display: inline-block;
+  height: 0.4em;
+  width: 0.4em;
+  border-radius: 0.5em;
+  border: 1px solid #000;
+}
+/* line 98, ../sass/index.scss */
+.container .content .project .project-div {
+  border-left: 1px solid #000;
+  margin-left: 0.2em;
+  padding: 0 0.5em;
+}
+/* line 103, ../sass/index.scss */
+.container .content .project .blank {
+  height: 0.8em;
+}
+/* line 106, ../sass/index.scss */
+.container .content .project .point {
+  display: inline-block;
+  width: 0.6em;
+  height: 0.6em;
+  border-radius: 0.6em;
+  background-color: #000;
+  margin-right: 0.3em;
+}
+/* line 115, ../sass/index.scss */
+.container .content .project .li-name {
+  display: inline-block;
+}
+/* line 121, ../sass/index.scss */
+.container .content .skill dl {
+  margin: 0;
+  font-weight: bold;
+}
+/* line 125, ../sass/index.scss */
+.container .content .skill dd {
+  margin-left: 0;
+}
+/* line 128, ../sass/index.scss */
+.container .content .skill dl dt {
+  margin: .33333333em 0;
+  font-weight: bold;
+  font-size: 1.04em;
+}
+/* line 134, ../sass/index.scss */
+.container .content .skill dd:before,
+.container .content .project dl dd li:before {
+  content: "";
+  background: url("../img/check.png") no-repeat;
+  background-size: .8em .8em;
+  /* 12/15 */
+  display: inline-block;
+  width: .8em;
+  height: .8em;
+  padding-right: .33333333em;
+  /* 5/15 */
+}
+
+/* line 149, ../sass/index.scss */
+footer {
+  text-align: center;
+  font-size: .8em;
+  margin: 3em 0 2em;
+}
+
+@media screen and (min-width: 900px) {
+  /* line 155, ../sass/index.scss */
+  .container {
+    width: 900px;
+  }
+
+  /* line 158, ../sass/index.scss */
+  header {
+    justify-content: space-between;
+  }
+
+  /* line 161, ../sass/index.scss */
+  .title {
+    text-align: left;
+  }
+
+  /* line 164, ../sass/index.scss */
+  .content > article {
+    width: 27em;
+  }
+
+  /* line 167, ../sass/index.scss */
+  .content > article:first-child {
+    padding-right: 3em;
+  }
+
+  /* line 170, ../sass/index.scss */
+  .content > article:last-child {
+    padding-left: 3em;
+  }
+}
+@media screen and (max-width: 900px) {
+  /* line 176, ../sass/index.scss */
+  .container {
+    width: 95%;
+  }
+
+  /* line 179, ../sass/index.scss */
+  .content > article {
+    width: 100%;
+  }
+
+  /* line 182, ../sass/index.scss */
+  header,
+  .content {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  /* line 187, ../sass/index.scss */
+  .title {
+    text-align: center;
+  }
+
+  /* line 190, ../sass/index.scss */
+  header {
+    align-items: center;
+  }
+
+  /* line 193, ../sass/index.scss */
+  .content > article {
+    padding: 0;
+  }
+
+  /* line 196, ../sass/index.scss */
+  address {
+    font-size: .94em;
+  }
+}
