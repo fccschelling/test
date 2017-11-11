@@ -141,7 +141,11 @@ a{text-decoration:none;cursor:pointer;outline:none;color:#333;-webkit-tap-highli
 40%{-moz-transform:perspective(400px) rotateY(-10deg)}
 70%{-moz-transform:perspective(400px) rotateY(10deg)}
 100%{-moz-transform:perspective(400px) rotateY(0deg);opacity:1}}
-
+@media screen and (min-width: 280px) and (max-width: 350px){
+	.msg_tip{
+   		font-size: 16px;
+  	}
+}
 @media screen and (min-width: 370px) and (max-width: 410px){
 .fudai_all{margin-top: 70px;}
 .rank_list{height:45%;}

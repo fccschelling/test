@@ -7,8 +7,19 @@
 		margin:0 auto;
 		position: relative;
 		margin-top: 15px;
+		padding-top: 20%;
+		.btn{
+			position: absolute;
+			right: -1%;
+			top:10%;
+			width: 8%;
+			height:80%;
+			overflow: hidden;
+			z-index: 999999;	
+		}
 		.num_box{
-			width: 84%;
+			z-index: 1;
+			width: 87%;
 			height: 50%;
 			position:absolute;
 			top:40%;
@@ -44,6 +55,10 @@
 			}
 			.num-bing{
 				background: url("../img/binglang.png") center no-repeat;
+				background-size:65%;
+			}
+			.num-ciya{
+				background: url("../img/ciya.png") center no-repeat;
 				background-size:65%;
 			}
 			.num-0{
@@ -88,9 +103,50 @@
 			} 
 		}
 	}
+	.msg_tip{
+		position: relative;
+		top:30px;
+		margin:0 auto;
+		width: 80%;
+		text-align:center;
+		font-size: 18px;
+		color:#b9aaaa;
+		font-weight:bold;
+	}
+	.light_tip{
+	  color: #fff45c;
+	}
 	.tiger_rank{
 		width: 50%;
 		margin:0 auto;
 		margin-top: 20%;
 	}
 }
+@-webkit-keyframes wobble{  
+    // 0%{-webkit-transform:  rotate3D(0,-1,0,0deg)}  
+    // 50%{-webkit-transform:translate3d(-5%,5%,0) rotate3D(1,0,0.6,-90deg)}  
+    // 30%{-webkit-transform: rotate3D(1,-1,1,45deg)}  
+    // 45%{-webkit-transform: rotate3D(1,1,0,45deg)}  
+    // 60%{-webkit-transform: rotate3D(1,-1,1,45deg)}  
+    // 75%{-webkit-transform: rotate3D(1,-1,1,45deg)}  
+    // 100%{-webkit-transform:rotate3D(0,-1,0,0deg)}  
+    // 0%{-webkit-transform:translateX(0%)}  
+            // 15%{-webkit-transform:translateX(-10%) rotate(-5deg)}  
+            // 30%{-webkit-transform:translateX(-20%) rotate(3deg)}  
+            50%{-webkit-transform:translateX(-50%) rotate(-90deg);top:45%;right:8%;
+				height:50px;
+            }  
+            // 60%{-webkit-transform:translateX(10%) rotate(2deg)}  
+            // 75%{-webkit-transform:translateX(-5%) rotate(-1deg)}  
+            100%{-webkit-transform:translateX(0%)} 
+  }
+  .yaogan{  
+	-webkit-animation:wobble 1.5s .3s ease  both;  
+  }
+  @media screen and (min-width: 290px) and (max-width: 350px){
+  	.padding_box .msg_tip{font-size:15px;}
+  }
+  @media screen and (min-width: 370px) and (max-width: 410px){
+  	.padding_box .msg_tip{font-size:16px;}
+  }
+  

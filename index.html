@@ -32,8 +32,11 @@
 					<div class="title_2 congralation">
 						<img src="img/title4.png" width="100%"/>
 					</div>
-					<article class="tiger btn">
-						<img src="img/laohuji.png" width="100%">
+					<article class="tiger optionPane">
+						<img src="img/laohuji1.png" width="100%">
+						<div class="btn">
+							<img src="img/yaogan1.png"  width="100%">
+						</div>
 						<ul class="num_box">
 					      <!-- <div class="num" style=""></div>
 					      <li class="num" style=""></li>
@@ -41,23 +44,23 @@
 					      <li class="btn"></li> -->
 					      	<li>  
 				                <dl class="dl" id="dlHeight" data-list="5">  
-				                    <dd class="num-bing"></dd>
-				                    <dd class="num-0"></dd>  
+				                    <dd class="num-bing ciya"></dd>
+				                    <!-- <dd class="num-0"></dd>   -->
 				                    <dd class="num-1"></dd>  
-				                    <dd class="num-2"></dd>  
+				                    <!-- <dd class="num-2"></dd>  
 				                    <dd class="num-3"></dd>  
 				                    <dd class="num-4"></dd>  
 				                    <dd class="num-5"></dd>  
 				                    <dd class="num-6"></dd>  
 				                    <dd class="num-7"></dd>  
 				                    <dd class="num-8"></dd>  
-				                    <dd class="num-9"></dd>  
+				                    <dd class="num-9"></dd> -->  
 				               </dl>  
 				            </li>  
 				            <li>  
 				                <dl class="dl" id="tiger-middle" data-list="10">  
 				                   <dd class="num-bing"></dd>
-				                    <dd class="num-0"></dd>  
+				                    <!-- <dd class="num-0"></dd>   -->
 				                    <dd class="num-1"></dd>  
 				                    <dd class="num-2"></dd>  
 				                    <dd class="num-3"></dd>  
@@ -71,7 +74,7 @@
 				            </li>  
 				            <li>  
 				                <dl class="dl" id="tiger-max" data-list="15">  
-				                   <dd class="num-bing"></dd>
+				                   <dd class="num-bing ciya"></dd>
 				                    <dd class="num-0"></dd>  
 				                    <dd class="num-1"></dd>  
 				                    <dd class="num-2"></dd>  
@@ -86,6 +89,7 @@
 				            </li>  
 					    </ul>
 					</article>
+					<p class="msg_tip">请点击右上方摇杆进行抽奖</p>
 					<div class="tiger_rank">
 							<img src="img/rank_btn.png" width="100%" />
 					</div>		
@@ -97,11 +101,22 @@
 	<script src="js/jquery.js">
 	</script>
 	<script  type="text/javascript" >
+    //传参变量getData，直接传数字类型即可
+		var getData=9;
+    var flag = null;
+    result=parseInt(getData);
+    if (getData<10) {
+     result="0"+getData+"0";
+      flag = true;
+    } else if (getData<100) {
+      result="0"+getData;
+    }
+    
 		var oli=document.getElementsByTagName("li"),  
          reset=document.querySelector(".reset"),  
-         btn=document.querySelector(".btn"),  
+         btn=document.querySelector(".optionPane"),  
          odl=document.querySelectorAll(".dl"),  
-         Let=11,H=20,first=3,second=5,  
+         Let=10,H=20,first=3,second=5,  
          third=8,cf=cs=ct=0,timer=null,str="";  
          // document.getElementById("audio1").play();  
         for (var i = 0; i < odl.length; i++) {  
@@ -110,9 +125,9 @@
                 if(i==0){
                 	ck=stradd(html,8); 
                 }else if (i==1) {
-                	ck=stradd(html,6);
+                	ck=stradd(html,4);
                 }else{
-                	ck=stradd(html,4);  
+                	ck=stradd(html,3);  
                 } 
      
                 odl[i].innerHTML=ck;  
@@ -161,33 +176,64 @@
                       clearInterval(obj.timer);  
                       if(funEnd)funEnd();  
                 }  
-            },30)  
+            },30) 
+            setTimeout(function(){
+              var data = parseInt(getData);
+              $('.msg_tip').html("恭喜您抽到一张"+"<span style='display:inline-block;font-size:20px;margin:0 3px;'>"+data+"</span>"+"倍翻倍卡！");
+              $('.msg_tip').addClass("light_tip");
+            },5000); 
          }  
-         function run(){  
-            for (var i = 0; i < oli.length; i++) {  
-                oli[i].value=Math.floor(Math.random()*10);  
-            var Num=parseInt(oli[i].value),  
-                odl=oli[i].getElementsByTagName("dl")[0],  
-                odd=odl.getElementsByTagName("dd"),  
-                size=odd.length,  
-                height=odl.offsetHeight,  
-                tops=odd[Num+(size-Let)].offsetTop;  
-                odl.style.top=0;  
-                str+=Num;   
-                starmove(odl,{"top":-(tops)},function(){  
-                    
-                });    
-                
-  
-           }; 
+         function run(result){ 
+
+         	var l1 = result.toString().substr(0,1);
+          var l2 = result.toString().substr(1,1);
+          var l3 = result.toString().substr(2,1);
+         	for (var i = 0; i < oli.length; i++) {
+            var lengthMore = 0;
+         		if (i==0) {
+         			oli[i].value=parseInt(l1); 
+         		} else if (i==1) {
+              oli[i].value=parseInt(l2); 
+
+            } else{
+              oli[i].value=parseInt(l3); 
+              if (flag) {
+                lengthMore = $("#tiger-max").height();
+                console.log(lengthMore+"dd");
+              }
+            }
+
+	            var Num=parseInt(oli[i].value),  
+	                odl=oli[i].getElementsByTagName("dl")[0],  
+	                odd=odl.getElementsByTagName("dd"),  
+	                size=odd.length;
+                  console.log(size);  
+	           var   height=odl.offsetHeight,  
+	                tops=odd[Num+(size-Let)].offsetTop-lengthMore;  
+	                odl.style.top=0;  
+	                str+=Num; 
+                  console.log(tops);  
+	                starmove(odl,{"top":-(tops)},function(){  
+	                    
+	                });    
+	                
+	  
+	           }; 
+      
+            
 
              
          }
-         $('.btn').bind("click", function(){
-         	$('.btn').unbind("click");
+         $('.optionPane').bind("click", function(){
+         	$('.optionPane').unbind("click");
+         	$('.btn').addClass("yaogan");
          	str="";  
             // this.className="tiger";  
-            run()  
+            setTimeout(function(){
+              $(".ciya").addClass("num-ciya");
+            	run(result) ;
+            },1500);
+             
             
          });
           
