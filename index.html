@@ -199,29 +199,21 @@
               oli[i].value=parseInt(l3); 
               if (flag) {
                 lengthMore = $("#tiger-max").height();
-                console.log(lengthMore+"dd");
               }
             }
 
 	            var Num=parseInt(oli[i].value),  
 	                odl=oli[i].getElementsByTagName("dl")[0],  
 	                odd=odl.getElementsByTagName("dd"),  
-	                size=odd.length;
-                  console.log(size);  
+	                size=odd.length;  
 	           var   height=odl.offsetHeight,  
 	                tops=odd[Num+(size-Let)].offsetTop-lengthMore;  
 	                odl.style.top=0;  
 	                str+=Num; 
-                  console.log(tops);  
 	                starmove(odl,{"top":-(tops)},function(){  
 	                    
 	                });    
-	                
-	  
 	           }; 
-      
-            
-
              
          }
          $('.optionPane').bind("click", function(){
