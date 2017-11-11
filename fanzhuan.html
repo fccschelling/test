@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=divice-width, initial-scale=1, shrink-to-fit=no,user-scalable=no">
+	<!-- 外部的 CSS -->
+	<link rel="stylesheet" href="stylesheets/css.css"/>
+	<link rel="stylesheet" href="stylesheets/fanzhuan.css">
+	
+</head>
+<body>
+	<section class="main_box">
+
+		<header class="index_header">
+				<article class="top_box">
+					<img src="img/top_img.png" width="100%" />
+				</article>
+		</header>
+		<article class="padding_box">
+			<article class="importance_box">
+				<article class="title_box">
+					<a class="logo_box">
+						<img src="img/logo.png" width="100%" />
+					</a>
+					<!-- <article class="min_jingbi">
+						<img src="img/jingbi.png" width="100%" />
+					</article> -->
+					<!-- <div class="title_1">
+						<img src="img/title1.png" width="100%"/>
+					</div> -->
+					<div class="title_2 congralation">
+						<img src="img/title4.png" width="100%"/>
+					</div>
+					<article class="tiger optionPane">
+						<img src="img/laohuji1.png" width="100%">
+						<div class="btn">
+							<img src="img/yaogan1.png"  width="100%">
+						</div>
+						<ul class="num_box">
+					      <!-- <div class="num" style=""></div>
+					      <li class="num" style=""></li>
+					      <li class="num last" style=""></li>
+					      <li class="btn"></li> -->
+					      	<li>  
+				                <dl class="dl" id="dlHeight" data-list="5">  
+				                    <dd class="num-bing ciya"></dd>
+				                    <!-- <dd class="num-0"></dd>   -->
+				                    <dd class="num-1"></dd>  
+				                    <!-- <dd class="num-2"></dd>  
+				                    <dd class="num-3"></dd>  
+				                    <dd class="num-4"></dd>  
+				                    <dd class="num-5"></dd>  
+				                    <dd class="num-6"></dd>  
+				                    <dd class="num-7"></dd>  
+				                    <dd class="num-8"></dd>  
+				                    <dd class="num-9"></dd> -->  
+				               </dl>  
+				            </li>  
+				            <li>  
+				                <dl class="dl" id="tiger-middle" data-list="10">  
+				                   <dd class="num-bing"></dd>
+				                    <!-- <dd class="num-0"></dd>   -->
+				                    <dd class="num-1"></dd>  
+				                    <dd class="num-2"></dd>  
+				                    <dd class="num-3"></dd>  
+				                    <dd class="num-4"></dd>  
+				                    <dd class="num-5"></dd>  
+				                    <dd class="num-6"></dd>  
+				                    <dd class="num-7"></dd>  
+				                    <dd class="num-8"></dd>  
+				                    <dd class="num-9"></dd>    
+				               </dl>  
+				            </li>  
+				            <li>  
+				                <dl class="dl" id="tiger-max" data-list="15">  
+				                   <dd class="num-bing ciya"></dd>
+				                    <dd class="num-0"></dd>  
+				                    <dd class="num-1"></dd>  
+				                    <dd class="num-2"></dd>  
+				                    <dd class="num-3"></dd>  
+				                    <dd class="num-4"></dd>  
+				                    <dd class="num-5"></dd>  
+				                    <dd class="num-6"></dd>  
+				                    <dd class="num-7"></dd>  
+				                    <dd class="num-8"></dd>  
+				                    <dd class="num-9"></dd>    
+				               </dl>  
+				            </li>  
+					    </ul>
+					</article>
+					<p class="msg_tip">请点击右上方摇杆进行抽奖</p>
+					<div class="tiger_rank">
+							<img src="img/rank_btn.png" width="100%" />
+					</div>		
+				</article>
+			</article>
+		</article>
+
+	</section> 
+	<script src="js/jquery.js">
+	</script>
+	<script  type="text/javascript" >
+    //传参变量getData，直接传数字类型即可
+		var getData=9;
+    var flag = null;
+    result=parseInt(getData);
+    if (getData<10) {
+     result="0"+getData+"0";
+      flag = true;
+    } else if (getData<100) {
+      result="0"+getData;
+    }
+    
+		var oli=document.getElementsByTagName("li"),  
+         reset=document.querySelector(".reset"),  
+         btn=document.querySelector(".optionPane"),  
+         odl=document.querySelectorAll(".dl"),  
+         Let=10,H=20,first=3,second=5,  
+         third=8,cf=cs=ct=0,timer=null,str="";  
+         // document.getElementById("audio1").play();  
+        for (var i = 0; i < odl.length; i++) {  
+            var html=odl[i].innerHTML;  
+                odl[i].innerHTML=""; 
+                if(i==0){
+                	ck=stradd(html,8); 
+                }else if (i==1) {
+                	ck=stradd(html,4);
+                }else{
+                	ck=stradd(html,3);  
+                } 
+     
+                odl[i].innerHTML=ck;  
+         };   
+        function stradd(str,size){  
+            if(Object.prototype.toString.call(str)  
+                =="[object String]"){  
+                for (var i = 0; i < size; i++) {  
+                    str+=str;  
+                };   
+            }else{  
+                return "数据类型错误";  
+            }  
+             return str;  
+        }  
+        function getStyle(obj,name){  
+           return obj.currentStyle?obj.currentStyle[name]:getComputedStyle(obj,false)[name];  
+        }  
+        function starmove(obj,json,funEnd){  
+            clearInterval(obj.timer);  
+            var Bstop=true;  
+            obj.timer=setInterval(function(){  
+                for(var attr in json){  
+                   var speed=0;  
+                   if(attr=="opacity"){  
+                       var cur=Math.round(parseFloat(getStyle(obj,attr)*100));  
+                   }else{  
+                       var cur=parseInt(getStyle(obj,attr));  
+                   }  
+                   speed=(json[attr]-cur)/20;  
+                   speed=speed>0?Math.ceil(speed):Math.floor(speed);   
+                   if(cur!=json[attr]){  
+                        Bstop=false;  
+                   }else{  
+                        Bstop=true;  
+                   }  
+  
+                   if(attr=="opacity"){  
+                       obj.style.opacity=(cur+speed)/100;  
+                   }else{  
+                       obj.style[attr]=cur+speed+"px";  
+                   }  
+                }  
+                
+                if(Bstop){  
+                      clearInterval(obj.timer);  
+                      if(funEnd)funEnd();  
+                }  
+            },30) 
+            setTimeout(function(){
+              var data = parseInt(getData);
+              $('.msg_tip').html("恭喜您抽到一张"+"<span style='display:inline-block;font-size:20px;margin:0 3px;'>"+data+"</span>"+"倍翻倍卡！");
+              $('.msg_tip').addClass("light_tip");
+            },5000); 
+         }  
+         function run(result){ 
+
+         	var l1 = result.toString().substr(0,1);
+          var l2 = result.toString().substr(1,1);
+          var l3 = result.toString().substr(2,1);
+         	for (var i = 0; i < oli.length; i++) {
+            var lengthMore = 0;
+         		if (i==0) {
+         			oli[i].value=parseInt(l1); 
+         		} else if (i==1) {
+              oli[i].value=parseInt(l2); 
+
+            } else{
+              oli[i].value=parseInt(l3); 
+              if (flag) {
+                lengthMore = $("#tiger-max").height();
+              }
+            }
+
+	            var Num=parseInt(oli[i].value),  
+	                odl=oli[i].getElementsByTagName("dl")[0],  
+	                odd=odl.getElementsByTagName("dd"),  
+	                size=odd.length;  
+	           var   height=odl.offsetHeight,  
+	                tops=odd[Num+(size-Let)].offsetTop-lengthMore;  
+	                odl.style.top=0;  
+	                str+=Num; 
+	                starmove(odl,{"top":-(tops)},function(){  
+	                    
+	                });    
+	           }; 
+             
+         }
+         $('.optionPane').bind("click", function(){
+         	$('.optionPane').unbind("click");
+         	$('.btn').addClass("yaogan");
+         	str="";  
+            // this.className="tiger";  
+            setTimeout(function(){
+              $(".ciya").addClass("num-ciya");
+            	run(result) ;
+            },1500);
+             
+            
+         });
+          
+	</script>
+</body>
+</html>

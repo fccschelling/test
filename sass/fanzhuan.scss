@@ -6,7 +6,7 @@
 		width: 100%;
 		margin:0 auto;
 		position: relative;
-		margin-top: 15px;
+		margin-top: 8px;
 		padding-top: 20%;
 		.btn{
 			position: absolute;
@@ -58,7 +58,7 @@
 				background-size:65%;
 			}
 			.num-ciya{
-				background: url("../img/ciya.png") center no-repeat;
+				background: url("../img/lightTear.png") center no-repeat;
 				background-size:65%;
 			}
 			.num-0{
@@ -119,7 +119,7 @@
 	.tiger_rank{
 		width: 50%;
 		margin:0 auto;
-		margin-top: 20%;
+		margin-top: 18%;
 	}
 }
 @-webkit-keyframes wobble{  
@@ -133,8 +133,8 @@
     // 0%{-webkit-transform:translateX(0%)}  
             // 15%{-webkit-transform:translateX(-10%) rotate(-5deg)}  
             // 30%{-webkit-transform:translateX(-20%) rotate(3deg)}  
-            50%{-webkit-transform:translateX(-50%) rotate(-90deg);top:45%;right:8%;
-				height:50px;
+            50%{-webkit-transform:translateX(-60%) rotate(-60deg);top:45%;right:2%;
+				height:45px;
             }  
             // 60%{-webkit-transform:translateX(10%) rotate(2deg)}  
             // 75%{-webkit-transform:translateX(-5%) rotate(-1deg)}  
